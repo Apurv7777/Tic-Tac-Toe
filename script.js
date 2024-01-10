@@ -18,6 +18,7 @@ start.addEventListener('click', () => {
     playerInfo.style.display = 'none';
     gameContainer.style.display = 'flex';
     info.innerText = 'Turn for ' + p1.value + ' (' + turn + ')';
+    music.play()
 })
 
 
@@ -57,7 +58,6 @@ const checkWin = () => {
     })
 }
 
-music.play()
 let boxes = document.querySelectorAll('.box')
 Array.from(boxes).forEach((e) => {
     let boxText = e.querySelector('.boxText')
