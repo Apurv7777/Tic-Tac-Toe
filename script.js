@@ -3,7 +3,6 @@ let turnAudio = new Audio("ting.mp3")
 let turn = 'X'
 let gameover = false;
 let music = new Audio("music.mp3")
-music.play()
 
 const info = document.querySelector('.info')
 const reset = document.querySelector('#reset')
@@ -14,10 +13,6 @@ const p1 = document.querySelector('.p1')
 const p2 = document.querySelector('.p2')
 const line = document.querySelector('.line')
 
-setInterval(()=>{
-    let music = new Audio("music.mp3")
-    music.play()
-},285000)
 
 start.addEventListener('click', () => {
     playerInfo.style.display = 'none';
@@ -54,13 +49,15 @@ const checkWin = () => {
             line.style.top = e[3];
             line.style.left = e[4];
             line.style.transform = `rotate(${e[5]}deg)`;
+            music.pause()
+            music.currentTime = 0;
             gameoverAudio.play()
             gameover = true;
         }
     })
 }
 
-
+music.play()
 let boxes = document.querySelectorAll('.box')
 Array.from(boxes).forEach((e) => {
     let boxText = e.querySelector('.boxText')
