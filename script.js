@@ -90,5 +90,7 @@ reset.addEventListener('click', () => {
         line.style.transform = '';
         line.style.visibility = 'hidden'
         gameover = false;
+        music.play()
+
     })
 })
